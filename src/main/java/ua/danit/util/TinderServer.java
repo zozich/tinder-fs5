@@ -12,8 +12,8 @@ import ua.danit.servlet.MessagesServlet;
 import ua.danit.servlet.UsersServlet;
 
 public class TinderServer {
-  public void start() throws Exception {
-    Server server = new Server(8081);
+  public void start(String port) throws Exception {
+    Server server = new Server(Integer.parseInt(port));
     ServletContextHandler handler = new ServletContextHandler();
 
     UsersDao usersDao = new UsersDao();
