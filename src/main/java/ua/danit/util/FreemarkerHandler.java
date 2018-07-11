@@ -10,10 +10,10 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 public class FreemarkerHandler {
-  public static void processTemplate(PrintWriter writer, Map<String, Object> variables, String templateName, Class clazz) throws IOException {
+  public static void processTemplate(PrintWriter writer, Map<String, Object> variables, String templateName, Class servletClass) throws IOException {
     Configuration cfg = new Configuration(Configuration.VERSION_2_3_28);
 
-    cfg.setClassLoaderForTemplateLoading(clazz.getClassLoader(), "static/html");
+    cfg.setClassLoaderForTemplateLoading(servletClass.getClassLoader(), "static/html");
     cfg.setDefaultEncoding("UTF-8");
     cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
     cfg.setLogTemplateExceptions(false);

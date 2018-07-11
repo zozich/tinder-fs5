@@ -24,27 +24,7 @@ public class LoginServlet extends HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter writer = resp.getWriter();
 
-//    FreemarkerHandler.processTemplate(writer, new HashMap<>(), "login.html");
-    writer.write("<!DOCTYPE html>\n" +
-        "<html lang=\"en\">\n" +
-        "<head>\n" +
-        "  <meta charset=\"UTF-8\">\n" +
-        "  <title>Login</title>\n" +
-        "</head>\n" +
-        "<body>\n" +
-        "  <form method=\"POST\" action=\"/login\">\n" +
-        "    <label>\n" +
-        "      Login\n" +
-        "      <input type=\"text\" name=\"login\">\n" +
-        "    </label>\n" +
-        "    <label>\n" +
-        "      Password\n" +
-        "      <input type=\"password\" name=\"password\">\n" +
-        "    </label>\n" +
-        "    <input type=\"submit\">\n" +
-        "  </form>\n" +
-        "</body>\n" +
-        "</html>");
+    FreemarkerHandler.processTemplate(writer, new HashMap<>(), "login.html", this.getClass());
   }
 
   @Override
