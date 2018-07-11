@@ -27,6 +27,6 @@ public class MessagesServlet extends HttpServlet {
     messages.add("How are you?");
     variables.put("messages", messages);
 
-    FreemarkerHandler.processTemplate(writer, variables, "messages.html");
+    FreemarkerHandler.processTemplate(writer, variables, "messages.html", this.getClass());
   }
 }

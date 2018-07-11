@@ -11,6 +11,9 @@ import ua.danit.servlet.LoginServlet;
 import ua.danit.servlet.MessagesServlet;
 import ua.danit.servlet.UsersServlet;
 
+import javax.servlet.DispatcherType;
+import java.util.EnumSet;
+
 public class TinderServer {
   public void start(String port) throws Exception {
     Server server = new Server(Integer.parseInt(port));
@@ -31,7 +34,7 @@ public class TinderServer {
     handler.addServlet(loginHolder, "/login");
 
     FilterHolder loginFilter = new FilterHolder(new LoginFilter());
-    handler.addFilter(loginFilter, "/*", null);
+    handler.addFilter(loginFilter, "/*", EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD));
 
     server.setHandler(handler);
     server.start();

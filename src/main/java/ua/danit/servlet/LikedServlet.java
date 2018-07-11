@@ -28,6 +28,6 @@ public class LikedServlet extends HttpServlet {
     Map<String, Object> variables = new HashMap<>();
     variables.put("users", usersDao.getLikedUsers());
 
-    FreemarkerHandler.processTemplate(writer, variables, "liked.html");
+    FreemarkerHandler.processTemplate(writer, variables, "liked.html", this.getClass());
   }
 }

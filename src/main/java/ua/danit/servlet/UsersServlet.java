@@ -36,7 +36,7 @@ public class UsersServlet extends HttpServlet {
 
     variables.put("user", user);
 
-    FreemarkerHandler.processTemplate(writer, variables, "users.html");
+    FreemarkerHandler.processTemplate(writer, variables, "users.html", this.getClass());
   }
 
   @Override
