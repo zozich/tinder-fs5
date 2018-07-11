@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liked</title>
+</head>
+<body>
+  <h1>List of users you liked</h1>
+  <#list users as user>
+    <h2>
+      <a href="/messages/${user.id}">${user.name}</a>
+    </h2>
+  </#list>
+</body>
+</html>
